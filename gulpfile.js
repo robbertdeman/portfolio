@@ -32,6 +32,7 @@ gulp.task("run", function() {
 gulp.task("watch", function () {
     gulp.watch("./src/**/*.*", ["run"]);
     gulp.watch("./sass/**/*.scss", ["sass"]);
+    gulp.watch("./items/**/*.html" ["html"]);
     gulp.watch(['./css/**/*.css','./dist/**/*.js','./*.html']).on('change', browserSync.reload);
 });
 

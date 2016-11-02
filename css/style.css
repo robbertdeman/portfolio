@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,800");
+*, *:before, *:after {
+  box-sizing: border-box; }
+
 body {
   font-family: "Raleway", sans-serif;
   font-size: 18px;
@@ -14,7 +17,7 @@ body {
 
 #root {
   width: 1280px;
-  margin: 0 auto 30px; }
+  margin: 0 auto; }
 
 header {
   margin: 30px 0;
@@ -53,7 +56,10 @@ nav {
       display: block;
       padding: 0 15px;
       text-decoration: none;
-      color: inherit; }
+      color: inherit;
+      -webkit-transition: color 0.3s;
+      /* For Safari 3.1 to 6.0 */
+      transition: color 0.3s; }
     nav ul .menu-text {
       font-family: "Raleway", sans-serif;
       font-weight: 600; }
@@ -62,63 +68,157 @@ nav {
     nav ul a:before {
       display: block;
       text-align: center; }
+    nav ul a.active, nav ul a.active:hover {
+      color: #939394;
+      cursor: default; }
+    nav ul a.empty, nav ul a.empty:hover {
+      display: none; }
 
-.content .item-01 {
-  background: url("../img/cambiance.png") no-repeat; }
+.content a {
+  color: #f8d608;
+  text-decoration: none; }
 
-.content .item-02 {
-  background: url("../img/bouwtekeningen-pakket.png") no-repeat; }
+.content a:hover {
+  color: #939394; }
 
-.content .item-03 {
-  background: url("../img/stockhambauwer.png") no-repeat; }
-
-.content .item-04 {
-  background: url("../img/negative-energie-and-wounds.png") no-repeat; }
-
-.content .item-05 {
-  background: url("../img/mood-problems.png") no-repeat; }
-
-.content .item-06 {
-  background: url("../img/the-spectrums-of-our-resources.jpg") no-repeat; }
-
-.content .item-07 {
-  background: url("../img/decisions-the-definition-of-life.png") no-repeat; }
-
-.content .item-08 {
-  background: url("../img/mature-boundary.png") no-repeat; }
-
-.content .item-09 {
-  background: url("../img/observing-ego.png") no-repeat; }
-
-.content .item-10 {
-  background: url("../img/anatomy-of-a-problem.png") no-repeat; }
-
-.content .item-11 {
-  background: url("../img/spectrum-decision-making.jpg") no-repeat; }
-
-.content .item-12 {
-  background: url("../img/oisterwijk-in-beeld.png") no-repeat; }
-
-.content .item-13 {
-  background: url("../img/morito.png") no-repeat; }
-
-.content .item-14 {
-  background: url("../img/the-excrement.png") no-repeat; }
-
-.content .item-15 {
-  background: url("../img/kleur-en-stijladvies.png") no-repeat; }
-
-.content .item-16 {
-  background: url("../img/de-voorste-stroom.png") no-repeat; }
-
-.content .item {
+.content .info, .content .video {
+  overflow: auto;
   display: block;
   float: left;
-  width: 320px;
-  background-color: #3c3d3c; }
+  position: relative; }
 
-.content .item.double:nth-child(2), .content .item.double:nth-child(3), .content .item.double:nth-child(6), .content .item.double:nth-child(7),
-.content .item.double:nth-child(10), .content .item.double:nth-child(11), .content .item.double:nth-child(14), .content .item.double:nth-child(15) {
+.content .info {
+  -webkit-transition: background 0.5s;
+  /* For Safari 3.1 to 6.0 */
+  transition: background 0.5s; }
+
+.content .info:hover {
+  background-color: rgba(248, 214, 8, 0.9); }
+
+.content .info span {
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-size: 50px;
+  font-weight: 600;
+  color: transparent;
+  -webkit-transition: color 0.7s;
+  /* For Safari 3.1 to 6.0 */
+  transition: color 0.7s; }
+
+.content .info span:hover {
+  color: #3c3d3c; }
+
+.content .video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+.content .single {
+  width: 320px;
+  float: left; }
+
+.content .double {
+  width: 640px;
+  float: left;
+  max-height: 450px; }
+
+.content .double.text {
+  padding: 20px;
+  height: 450px; }
+  .content .double.text h2 {
+    margin-top: 0; }
+
+.content .item-01 {
+  background: url("../img/port/cambiance.png") no-repeat; }
+
+.content .item-02 {
+  background: url("../img/port/bouwtekeningen-pakket.png") no-repeat; }
+
+.content .item-03 {
+  background: url("../img/port/stockhambauer.png") no-repeat; }
+
+.content .item-04 {
+  background: url("../img/port/negative-energie-and-wounds.png") no-repeat; }
+
+.content .item-05 {
+  background: url("../img/port/mood-problems.png") no-repeat; }
+
+.content .item-06 {
+  background: url("../img/port/the-spectrums-of-our-resources.jpg") no-repeat; }
+
+.content .item-07 {
+  background: url("../img/port/decisions-the-definition-of-life.png") no-repeat; }
+
+.content .item-08 {
+  background: url("../img/port/mature-boundary.png") no-repeat; }
+
+.content .item-09 {
+  background: url("../img/port/observing-ego.png") no-repeat; }
+
+.content .item-10 {
+  background: url("../img/port/anatomy-of-a-problem.png") no-repeat; }
+
+.content .item-11 {
+  background: url("../img/port/spectrum-decision-making.jpg") no-repeat; }
+
+.content .item-12 {
+  background: url("../img/port/oisterwijk-in-beeld.png") no-repeat; }
+
+.content .item-13 {
+  background: url("../img/port/morito.png") no-repeat; }
+
+.content .item-14 {
+  background: url("../img/port/the-excrement.png") no-repeat; }
+
+.content .item-15 {
+  background: url("../img/port/kleur-en-stijladviezen.png") no-repeat; }
+
+.content .item-16 {
+  background: url("../img/port/de-voorste-stroom.png") no-repeat; }
+
+.content .item-17 {
+  background: url("../img/port/databases.png") no-repeat; }
+
+.content .item-18 {
+  background: url("../img/port/game-programming.png") no-repeat; }
+
+.content .item-19 {
+  background: url("../img/port/gamejam.png") no-repeat; }
+
+.content .item-20 {
+  background: url("../img/port/oculus.jpg") no-repeat; }
+
+.content .item-01-res {
+  background: url("../img/res/responsive-cambiance.png") no-repeat; }
+
+.content .item-02-res {
+  background: url("../img/res/responsive-bouwtekeningen-pakket.png") no-repeat; }
+
+.content .item-03-res {
+  background: url("../img/res/responsive-stockhambauer.png") no-repeat; }
+
+.content .item-12-res {
+  background: url("../img/res/responsive-oisterwijk-in-beeld.png") no-repeat; }
+
+.content .item-13-res {
+  background: url("../img/res/responsive-morito.png") no-repeat; }
+
+.content .item-15-res {
+  background: url("../img/res/responsive-kleur-en-stijladviezen.png") no-repeat; }
+
+.content .item-16-res {
+  background: url("../img/res/responsive-de-voorste-stroom.png") no-repeat; }
+
+.content .item {
+  z-index: -1;
   background-color: #fcfbee; }
 
 .content .item.single {
@@ -136,8 +236,7 @@ nav {
     bottom: 0; }
 
 .content .item.double {
-  position: relative;
-  width: 640px; }
+  position: relative; }
   .content .item.double:before {
     display: block;
     content: " ";
@@ -150,6 +249,18 @@ nav {
     right: 0;
     bottom: 0; }
 
+.content ul {
+  margin: 0;
+  padding: 0; }
+  .content ul li {
+    display: block;
+    margin-bottom: 5px; }
+  .content ul li:before {
+    margin-right: 5px;
+    color: #f8d608; }
+  .content ul span {
+    font-family: "Raleway", sans-serif; }
+
 /* for high resolution display */
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .item.single {
@@ -157,48 +268,74 @@ nav {
   .item.double {
     background-size: 640px 450px; }
   .item.item-01 {
-    background-image: url("../img/cambiance-ret.png"); }
+    background-image: url("../img/port/cambiance-ret.png"); }
   .item.item-02 {
-    background-image: url("../img/bouwtekeningen-pakket-ret.png"); }
+    background-image: url("../img/port/bouwtekeningen-pakket-ret.png"); }
   .item.item-03 {
-    background-image: url("../img/stockhambauwer-ret.png"); }
+    background-image: url("../img/port/stockhambauer-ret.png"); }
   .item.item-04 {
-    background-image: url("../img/negative-energie-and-wounds-ret.png"); }
+    background-image: url("../img/port/negative-energie-and-wounds-ret.png"); }
   .item.item-05 {
-    background-image: url("../img/mood-problems-ret.png"); }
+    background-image: url("../img/port/mood-problems-ret.png"); }
   .item.item-06 {
-    background-image: url("../img/the-spectrums-of-our-resources-ret.jpg"); }
+    background-image: url("../img/port/the-spectrums-of-our-resources-ret.jpg"); }
   .item.item-07 {
-    background-image: url("../img/decisions-the-definition-of-life-ret.png"); }
+    background-image: url("../img/port/decisions-the-definition-of-life-ret.png"); }
   .item.item-08 {
-    background-image: url("../img/mature-boundary-ret.png"); }
+    background-image: url("../img/port/mature-boundary-ret.png"); }
   .item.item-09 {
-    background-image: url("../img/observing-ego-ret.png"); }
+    background-image: url("../img/port/observing-ego-ret.png"); }
   .item.item-10 {
-    background-image: url("../img/anatomy-of-a-problem-ret.png"); }
+    background-image: url("../img/port/anatomy-of-a-problem-ret.png"); }
   .item.item-11 {
-    background-image: url("../img/spectrum-decision-making-ret.jpg"); }
+    background-image: url("../img/port/spectrum-decision-making-ret.jpg"); }
   .item.item-12 {
-    background-image: url("../img/oisterwijk-in-beeld-ret.png"); }
+    background-image: url("../img/port/oisterwijk-in-beeld-ret.png"); }
   .item.item-13 {
-    background-image: url("../img/morito-ret.png"); }
+    background-image: url("../img/port/morito-ret.png"); }
   .item.item-14 {
-    background-image: url("../img/the-excrement-ret.png"); }
+    background-image: url("../img/port/the-excrement-ret.png"); }
   .item.item-15 {
-    background-image: url("../img/kleur-en-stijladvies-ret.png"); }
+    background-image: url("../img/port/kleur-en-stijladviezen-ret.png"); }
   .item.item-16 {
-    background-image: url("../img/de-voorste-stroom-ret.png"); } }
+    background-image: url("../img/port/de-voorste-stroom-ret.png"); }
+  .item.item-17 {
+    background-image: url("../img/port/databases-ret.png"); }
+  .item.item-18 {
+    background-image: url("../img/port/game-programming-ret.png"); }
+  .item.item-19 {
+    background-image: url("../img/port/gamejam-ret.png"); }
+  .content .item-01-res {
+    background-image: url("../img/res/responsive-cambiance-ret.png"); }
+  .content .item-02-res {
+    background-image: url("../img/res/responsive-bouwtekeningen-pakket-ret.png"); }
+  .content .item-03-res {
+    background-image: url("../img/res/responsive-stockhambauer-ret.png"); }
+  .content .item-12-res {
+    background-image: url("../img/res/responsive-oisterwijk-in-beeld-ret.png"); }
+  .content .item-13-res {
+    background-image: url("../img/res/responsive-morito-ret.png"); }
+  .content .item-15-res {
+    background-image: url("../img/res/responsive-kleur-en-stijladviezen-ret.png"); }
+  .content .item-16-res {
+    background-image: url("../img/res/responsive-de-voorste-stroom-ret.png"); } }
 
 @media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  body {
+    font-size: 14px; }
   #root {
     width: 1024px; }
   nav ul {
     font-size: 21px; }
-  .content .item {
+  .content .info span {
+    font-size: 40px; }
+  .content .single {
     width: 256px;
     background-size: contain; }
-  .content .item.double {
-    width: 512px; } }
+  .content .double {
+    width: 512px;
+    max-height: 360px;
+    background-size: contain; } }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   #root {
@@ -211,15 +348,24 @@ nav {
     background-size: 200px 91px; }
   nav ul {
     font-size: 15px; }
-  .content .item {
+  .content .info span {
+    font-size: 30px; }
+  .content h2 {
+    font-size: 15px; }
+  .content .single {
     width: 192px;
     background-size: contain; }
-  .content .item.double {
-    width: 384px; } }
+  .content .double {
+    width: 384px;
+    max-height: 270px;
+    background-size: contain; }
+  .content .double.text {
+    font-size: 11px; } }
 
 @media only screen and (max-width: 767px) {
   #root {
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 60px; }
   header {
     margin: 30px 0; }
   h1 {
@@ -227,40 +373,63 @@ nav {
     width: 100%;
     text-align: center;
     background-position-x: center;
-    margin-bottom: 20px;
     margin-left: 0; }
-  #burger {
-    display: block;
-    text-align: center;
-    font-weight: 800;
-    background-color: #3c3d3c;
-    color: #fcfbee;
-    padding: 20px 0;
-    font-size: 22px;
-    cursor: pointer; }
-    #burger span {
-      margin-right: 5px; }
   nav {
-    display: none;
     float: none;
-    position: static; }
+    position: fixed;
+    text-align: center;
+    left: 0;
+    z-index: 999;
+    height: 60px;
+    line-height: 80px;
+    -webkit-box-shadow: 0px -5px 30px 0px rgba(50, 50, 50, 0.2);
+    -moz-box-shadow: 0px -5px 30px 0px rgba(50, 50, 50, 0.2);
+    box-shadow: 0px -5px 30px 0px rgba(50, 50, 50, 0.2); }
     nav ul {
-      text-align: center; }
-      nav ul li {
-        display: block;
-        background-color: #fcfbee; }
-      nav ul a {
-        padding: 10px 0; }
-  .content .item {
-    width: 50%;
-    background-size: cover; }
-  .content .item.double {
+      background-color: #fcfbee; }
+      nav ul .fa {
+        font-size: 20px; }
+      nav ul .menu-text {
+        font-size: 12px; }
+  .content .info span {
+    font-size: 40px; }
+  .content .info, .content .video {
+    float: none;
     width: 100%; }
+  .content .item {
+    width: 100%;
+    background-size: contain; }
+  .content .item.double, .content .double.text {
+    width: 100%;
+    height: auto; }
+  .content .double.text {
+    max-height: none; }
+  .content .double.text h2 {
+    text-align: center; }
   .content .item.double:nth-child(odd) {
     background-color: #3c3d3c; }
   .content .item.double:nth-child(even) {
     background-color: #fcfbee; } }
 
 @media only screen and (max-width: 479px) {
+  nav {
+    height: 60px;
+    line-height: 80px; }
+    nav ul .fa {
+      font-size: 18px; }
+    nav ul .menu-text {
+      font-size: 10px; }
+    nav ul a {
+      padding: 0 8px; }
+  .content .info span {
+    font-size: 30px; }
   .content .item.single {
     width: 100%; } }
+
+@media only screen and (max-width: 359px) {
+  nav ul .menu-text {
+    font-size: 9px; }
+  nav ul a {
+    padding: 0 5px; }
+  .content .info span {
+    font-size: 25px; } }

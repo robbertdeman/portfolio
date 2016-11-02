@@ -24,7 +24,12 @@ $light-grey-color: #939394;
 $grey-color: #646565;
 $black-color: #3c3d3c;
 $gold-color: #f8d608;
+$gold-color-90: rgba(248, 214, 8, 0.9);
 $font: 'Raleway', sans-serif;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 body {
   font-family: $font;
@@ -43,7 +48,7 @@ body {
 
 #root {
   width: 1280px;
-  margin: 0 auto 30px;
+  margin: 0 auto;
 }
 
 header {
@@ -92,6 +97,9 @@ nav {
       padding: 0 15px;
       text-decoration: none;
       color: inherit;
+
+      -webkit-transition: color 0.3s; /* For Safari 3.1 to 6.0 */
+      transition: color 0.3s;
     }
     .menu-text {
       font-family: $font;
@@ -104,44 +112,152 @@ nav {
       display: block;
       text-align: center;
     }
+    a.active, a.active:hover {
+      color: $light-grey-color;
+      cursor: default;
+    }
+    a.empty, a.empty:hover {
+      display: none;
+    }
   }
 }
 
 .content {
 
-  .item-01 { background: url("../img/cambiance.png") no-repeat; }
-  .item-02 { background: url("../img/bouwtekeningen-pakket.png") no-repeat; }
-  .item-03 { background: url("../img/stockhambauwer.png") no-repeat; }
-  .item-04 { background: url("../img/negative-energie-and-wounds.png") no-repeat; }
-  .item-05 { background: url("../img/mood-problems.png") no-repeat; }
-  .item-06 { background: url("../img/the-spectrums-of-our-resources.jpg") no-repeat; }
-  .item-07 { background: url("../img/decisions-the-definition-of-life.png") no-repeat; }
-  .item-08 { background: url("../img/mature-boundary.png") no-repeat; }
-  .item-09 { background: url("../img/observing-ego.png") no-repeat; }
-  .item-10 { background: url("../img/anatomy-of-a-problem.png") no-repeat; }
-  .item-11 { background: url("../img/spectrum-decision-making.jpg") no-repeat; }
-  .item-12 { background: url("../img/oisterwijk-in-beeld.png") no-repeat; }
-  .item-13 { background: url("../img/morito.png") no-repeat; }
-  .item-14 { background: url("../img/the-excrement.png") no-repeat; }
-  .item-15 { background: url("../img/kleur-en-stijladvies.png") no-repeat; }
-  .item-16 { background: url("../img/de-voorste-stroom.png") no-repeat; }
-  .item {
+  a {
+    color: $gold-color;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $light-grey-color;
+  }
+
+  .info, .video {
+    overflow: auto;
     display: block;
     float: left;
-    width: 320px;
-    background-color: $black-color;
+    position: relative;
   }
-  .item.double:nth-child(2), .item.double:nth-child(3), .item.double:nth-child(6), .item.double:nth-child(7),
-  .item.double:nth-child(10), .item.double:nth-child(11), .item.double:nth-child(14), .item.double:nth-child(15) {
+
+  .info {
+    -webkit-transition: background 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: background 0.5s;
+  }
+
+  .info:hover {
+    background-color: $gold-color-90;
+  }
+
+  .info span {
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-size: 50px;
+    font-weight: 600;
+    //line-height: 20px;
+    color: transparent;
+
+    -webkit-transition: color 0.7s; /* For Safari 3.1 to 6.0 */
+    transition: color 0.7s;
+  }
+
+  .info span:hover {
+    color: $black-color;
+  }
+
+  .video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .single {
+    width: 320px;
+    float: left;
+  }
+  .double {
+    width: 640px;
+    float: left;
+    max-height: 450px;
+  }
+  .double.text {
+    padding: 20px;
+    height: 450px;
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+
+  .item-01 { background: url("../img/port/cambiance.png") no-repeat; }
+  .item-02 { background: url("../img/port/bouwtekeningen-pakket.png") no-repeat; }
+  .item-03 { background: url("../img/port/stockhambauer.png") no-repeat; }
+  .item-04 { background: url("../img/port/negative-energie-and-wounds.png") no-repeat; }
+  .item-05 { background: url("../img/port/mood-problems.png") no-repeat; }
+  .item-06 { background: url("../img/port/the-spectrums-of-our-resources.jpg") no-repeat; }
+  .item-07 { background: url("../img/port/decisions-the-definition-of-life.png") no-repeat; }
+  .item-08 { background: url("../img/port/mature-boundary.png") no-repeat; }
+  .item-09 { background: url("../img/port/observing-ego.png") no-repeat; }
+  .item-10 { background: url("../img/port/anatomy-of-a-problem.png") no-repeat; }
+  .item-11 { background: url("../img/port/spectrum-decision-making.jpg") no-repeat; }
+  .item-12 { background: url("../img/port/oisterwijk-in-beeld.png") no-repeat; }
+  .item-13 { background: url("../img/port/morito.png") no-repeat; }
+  .item-14 { background: url("../img/port/the-excrement.png") no-repeat; }
+  .item-15 { background: url("../img/port/kleur-en-stijladviezen.png") no-repeat; }
+  .item-16 { background: url("../img/port/de-voorste-stroom.png") no-repeat; }
+  .item-17 { background: url("../img/port/databases.png") no-repeat; }
+  .item-18 { background: url("../img/port/game-programming.png") no-repeat; }
+  .item-19 { background: url("../img/port/gamejam.png") no-repeat; }
+  .item-20 { background: url("../img/port/oculus.jpg") no-repeat; }
+
+
+  .item-01-res { background: url("../img/res/responsive-cambiance.png") no-repeat; }
+  .item-02-res { background: url("../img/res/responsive-bouwtekeningen-pakket.png") no-repeat; }
+  .item-03-res { background: url("../img/res/responsive-stockhambauer.png") no-repeat; }
+  .item-12-res { background: url("../img/res/responsive-oisterwijk-in-beeld.png") no-repeat; }
+  .item-13-res { background: url("../img/res/responsive-morito.png") no-repeat; }
+  .item-15-res { background: url("../img/res/responsive-kleur-en-stijladviezen.png") no-repeat; }
+  .item-16-res { background: url("../img/res/responsive-de-voorste-stroom.png") no-repeat; }
+
+  .item {
+    z-index: -1;
     background-color: $coconut-cream-color;
   }
+
   .item.single {
     @include aspect-ratio(32,45);
   }
   .item.double {
     @include aspect-ratio(64,45);
-    width: 640px;
   }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    li:before {
+      margin-right: 5px;
+      color: $gold-color;
+    }
+
+    span {
+      font-family: $font;
+    }
+  }
+
+
 }
 
 /* for high resolution display */
@@ -157,38 +273,62 @@ only screen and (                min-resolution: 2dppx) {
   .item.single { background-size: 320px 450px; }
   .item.double { background-size: 640px 450px; }
 
-  .item.item-01 { background-image: url("../img/cambiance-ret.png"); }
-  .item.item-02 { background-image: url("../img/bouwtekeningen-pakket-ret.png"); }
-  .item.item-03 { background-image: url("../img/stockhambauwer-ret.png"); }
-  .item.item-04 { background-image: url("../img/negative-energie-and-wounds-ret.png"); }
-  .item.item-05 { background-image: url("../img/mood-problems-ret.png"); }
-  .item.item-06 { background-image: url("../img/the-spectrums-of-our-resources-ret.jpg"); }
-  .item.item-07 { background-image: url("../img/decisions-the-definition-of-life-ret.png"); }
-  .item.item-08 { background-image: url("../img/mature-boundary-ret.png"); }
-  .item.item-09 { background-image: url("../img/observing-ego-ret.png"); }
-  .item.item-10 { background-image: url("../img/anatomy-of-a-problem-ret.png"); }
-  .item.item-11 { background-image: url("../img/spectrum-decision-making-ret.jpg"); }
-  .item.item-12 { background-image: url("../img/oisterwijk-in-beeld-ret.png"); }
-  .item.item-13 { background-image: url("../img/morito-ret.png"); }
-  .item.item-14 { background-image: url("../img/the-excrement-ret.png"); }
-  .item.item-15 { background-image: url("../img/kleur-en-stijladvies-ret.png"); }
-  .item.item-16 { background-image: url("../img/de-voorste-stroom-ret.png"); }
+  .item.item-01 { background-image: url("../img/port/cambiance-ret.png"); }
+  .item.item-02 { background-image: url("../img/port/bouwtekeningen-pakket-ret.png"); }
+  .item.item-03 { background-image: url("../img/port/stockhambauer-ret.png"); }
+  .item.item-04 { background-image: url("../img/port/negative-energie-and-wounds-ret.png"); }
+  .item.item-05 { background-image: url("../img/port/mood-problems-ret.png"); }
+  .item.item-06 { background-image: url("../img/port/the-spectrums-of-our-resources-ret.jpg"); }
+  .item.item-07 { background-image: url("../img/port/decisions-the-definition-of-life-ret.png"); }
+  .item.item-08 { background-image: url("../img/port/mature-boundary-ret.png"); }
+  .item.item-09 { background-image: url("../img/port/observing-ego-ret.png"); }
+  .item.item-10 { background-image: url("../img/port/anatomy-of-a-problem-ret.png"); }
+  .item.item-11 { background-image: url("../img/port/spectrum-decision-making-ret.jpg"); }
+  .item.item-12 { background-image: url("../img/port/oisterwijk-in-beeld-ret.png"); }
+  .item.item-13 { background-image: url("../img/port/morito-ret.png"); }
+  .item.item-14 { background-image: url("../img/port/the-excrement-ret.png"); }
+  .item.item-15 { background-image: url("../img/port/kleur-en-stijladviezen-ret.png"); }
+  .item.item-16 { background-image: url("../img/port/de-voorste-stroom-ret.png"); }
+  .item.item-17 { background-image: url("../img/port/databases-ret.png"); }
+  .item.item-18 { background-image: url("../img/port/game-programming-ret.png"); }
+  .item.item-19 { background-image: url("../img/port/gamejam-ret.png"); }
+
+  .content .item-01-res { background-image: url("../img/res/responsive-cambiance-ret.png"); }
+  .content .item-02-res { background-image: url("../img/res/responsive-bouwtekeningen-pakket-ret.png"); }
+  .content .item-03-res { background-image: url("../img/res/responsive-stockhambauer-ret.png"); }
+  .content .item-12-res { background-image: url("../img/res/responsive-oisterwijk-in-beeld-ret.png"); }
+  .content .item-13-res { background-image: url("../img/res/responsive-morito-ret.png"); }
+  .content .item-15-res { background-image: url("../img/res/responsive-kleur-en-stijladviezen-ret.png"); }
+  .content .item-16-res { background-image: url("../img/res/responsive-de-voorste-stroom-ret.png"); }
+
 }
 
 @media
 only screen and (min-width: 1024px) and (max-width: 1279px) {
+
+  body {
+    font-size: 14px;
+  }
 
   #root { width: 1024px; }
 
   nav ul { font-size: 21px; }
 
   .content {
-    .item {
+
+    .info span {
+      font-size: 40px;
+    }
+
+    .single {
       width: 256px;
       background-size: contain;
+
     }
-    .item.double {
+    .double {
       width: 512px;
+      max-height: 360px;
+      background-size: contain;
     }
   }
 }
@@ -211,12 +351,25 @@ only screen and (min-width: 768px) and (max-width: 1023px) {
   nav ul { font-size: 15px; }
 
   .content {
-    .item {
+    .info span {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 15px;
+    }
+
+    .single {
       width: 192px;
       background-size: contain;
     }
-    .item.double {
+    .double {
       width: 384px;
+      max-height: 270px;
+      background-size: contain;
+    }
+    .double.text {
+      font-size: 11px;
     }
   }
 }
@@ -224,7 +377,10 @@ only screen and (min-width: 768px) and (max-width: 1023px) {
 @media
 only screen and (max-width: 767px) {
 
-  #root { width: 100%; }
+  #root {
+    width: 100%;
+    margin-bottom: 60px;
+  }
 
   header {
     margin: 30px 0;
@@ -235,67 +391,106 @@ only screen and (max-width: 767px) {
     width: 100%;
     text-align: center;
     background-position-x: center;
-    margin-bottom: 20px;
     margin-left: 0;
   }
 
-  #burger {
-    display: block;
-    text-align: center;
-    font-weight: 800;
-    background-color: $black-color;
-    color: $coconut-cream-color;
-    padding: 20px 0;
-    font-size: 22px;
-    cursor: pointer;
-
-    span {
-      margin-right: 5px;
-    }
-  }
-
   nav {
-    display: none;
     float: none;
-    position: static;
+    position: fixed;
+    text-align: center;
+    left: 0;
+    z-index: 999;
+    height: 60px;
+    line-height: 80px;
+    -webkit-box-shadow: 0px -5px 30px 0px rgba(50, 50, 50, 0.2);
+    -moz-box-shadow:    0px -5px 30px 0px rgba(50, 50, 50, 0.2);
+    box-shadow:         0px -5px 30px 0px rgba(50, 50, 50, 0.2);
 
     ul {
-      text-align: center;
+      background-color: $coconut-cream-color;
+      //padding: 10px 0;
 
-      li {
-        display: block;
-        background-color: $coconut-cream-color;
+      .fa {
+        font-size: 20px;
       }
-      a {
-        padding: 10px 0;
+      .menu-text {
+        font-size: 12px;
       }
     }
   }
 
   .content {
 
-    .item {
-      width: 50%;
-      background-size: cover;
+    .info span {
+      font-size: 40px;
     }
-    .item.double {
+
+    .info, .video {
+      float: none;
       width: 100%;
     }
-    .item.double:nth-child(odd) {
-      background-color: $black-color;
+    
+    .item {
+      width: 100%;
+      background-size: contain;
     }
-    .item.double:nth-child(even) {
-      background-color: $coconut-cream-color;
-    }
+    .item.double, .double.text { width: 100%; height: auto; }
+    .double.text { max-height: none; }
+    .double.text h2 { text-align: center }
+    .item.double:nth-child(odd) { background-color: $black-color; }
+    .item.double:nth-child(even) { background-color: $coconut-cream-color; }
   }
 }
 
 @media
 only screen and (max-width: 479px) {
 
+  nav {
+    height: 60px;
+    line-height: 80px;
+
+    ul {
+
+      .fa {
+        font-size: 18px;
+      }
+      .menu-text {
+        font-size: 10px;
+      }
+      a {
+        padding: 0 8px;
+      }
+    }
+  }
+
   .content {
+    .info span {
+      font-size: 30px;
+    }
+
     .item.single {
       width: 100%;
+    }
+  }
+}
+
+@media
+only screen and (max-width: 359px) {
+  nav {
+
+    ul {
+      .menu-text {
+        font-size: 9px;
+      }
+      a {
+        padding: 0 5px;
+      }
+    }
+  }
+
+  .content {
+    .info span {
+      font-size: 25px;
     }
   }
 }
