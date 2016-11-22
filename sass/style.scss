@@ -18,6 +18,8 @@
   }
 }
 
+$passion: #ae2924;
+
 $bg-color: #fff;
 $coconut-cream-color: #fcfbee;
 $light-grey-color: #939394;
@@ -56,14 +58,14 @@ header {
   position: relative;
 }
 
-h1 { //mag weg wanneer het logo online is
+h1 {
   float: left;
   width: 289px;
   height: 132px;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 20px;
   text-indent: -9999px;
   background: url("../img/logo.png") no-repeat;
-  background-image: url("../img/logo.svg");
+  //background-image: url("../img/logo.svg");
   background-size: 289px 132px;
 
   a {
@@ -166,8 +168,31 @@ nav {
     transition: color 0.7s;
   }
 
+  .info span.passie, .info span.recent, .info span.voormalig, .info span.schoolwerk {
+    color: transparent;
+
+    -webkit-transition: color 0.7s; /* For Safari 3.1 to 6.0 */
+    transition: color 0.7s;
+  }
+
   .info span:hover {
     color: $black-color;
+  }
+
+  .info span.passie:hover {
+    color: $passion;
+  }
+
+  .info span.recent:hover {
+    color: $black-color;
+  }
+
+  .info span.schoolwerk:hover {
+    color: $coconut-cream-color;
+  }
+
+  .info span.voormalig:hover {
+    color: $grey-color;
   }
 
   .video iframe {
@@ -194,6 +219,25 @@ nav {
     h2 {
       margin-top: 0;
     }
+
+    ul {
+      margin-bottom: 25px;
+      max-width: 400px;
+    }
+
+    .veld {
+      width: 150px;
+      float: left;
+    }
+
+    .gegevens {
+      float: left;
+      width: 150px;
+    }
+
+    .right {
+      float: right;
+    }
   }
 
   .item-01 { background: url("../img/port/cambiance.png") no-repeat; }
@@ -216,6 +260,9 @@ nav {
   .item-18 { background: url("../img/port/game-programming.png") no-repeat; }
   .item-19 { background: url("../img/port/gamejam.png") no-repeat; }
   .item-20 { background: url("../img/port/oculus.jpg") no-repeat; }
+  .item-21 { background: url("../img/develop-skills.png") no-repeat; }
+  .item-22 { background: url("../img/design-skills.png") no-repeat; }
+  .item-23 { background: url("../img/robbert-de-man.jpg") no-repeat; }
 
 
   .item-01-res { background: url("../img/res/responsive-cambiance.png") no-repeat; }
@@ -292,6 +339,8 @@ only screen and (                min-resolution: 2dppx) {
   .item.item-17 { background-image: url("../img/port/databases-ret.png"); }
   .item.item-18 { background-image: url("../img/port/game-programming-ret.png"); }
   .item.item-19 { background-image: url("../img/port/gamejam-ret.png"); }
+  .item.item-21 { background-image: url("../img/develop-skills-ret.png"); }
+  .item.item-22 { background-image: url("../img/design-skills-ret.png"); }
 
   .content .item-01-res { background-image: url("../img/res/responsive-cambiance-ret.png"); }
   .content .item-02-res { background-image: url("../img/res/responsive-bouwtekeningen-pakket-ret.png"); }
@@ -345,6 +394,7 @@ only screen and (min-width: 768px) and (max-width: 1023px) {
   h1 { //mag weg wanneer het logo online is
     width: 200px;
     height: 91px;
+    margin-left: 10px;
     background-size: 200px 91px;
   }
 
@@ -370,6 +420,15 @@ only screen and (min-width: 768px) and (max-width: 1023px) {
     }
     .double.text {
       font-size: 11px;
+      padding: 10px;
+
+      ul {
+        margin-bottom: 15px;
+
+        li {
+          margin-bottom: 3px;
+        }
+      }
     }
   }
 }
@@ -408,7 +467,6 @@ only screen and (max-width: 767px) {
 
     ul {
       background-color: $coconut-cream-color;
-      //padding: 10px 0;
 
       .fa {
         font-size: 20px;
@@ -435,7 +493,7 @@ only screen and (max-width: 767px) {
       background-size: contain;
     }
     .item.double, .double.text { width: 100%; height: auto; }
-    .double.text { max-height: none; }
+    .double.text { max-height: none;}
     .double.text h2 { text-align: center }
     .item.double:nth-child(odd) { background-color: $black-color; }
     .item.double:nth-child(even) { background-color: $coconut-cream-color; }
@@ -470,6 +528,14 @@ only screen and (max-width: 479px) {
 
     .item.single {
       width: 100%;
+    }
+    .double.text .veld, .double.text .gegevens {
+      float: none;
+      width: 100%;
+      text-align: center;
+    }
+    .double.text .gegevens {
+      margin-bottom: 10px;
     }
   }
 }

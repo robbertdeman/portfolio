@@ -27,10 +27,9 @@ h1 {
   float: left;
   width: 289px;
   height: 132px;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 20px;
   text-indent: -9999px;
   background: url("../img/logo.png") no-repeat;
-  background-image: url("../img/logo.svg");
   background-size: 289px 132px; }
   h1 a {
     display: block;
@@ -111,8 +110,26 @@ nav {
   /* For Safari 3.1 to 6.0 */
   transition: color 0.7s; }
 
+.content .info span.passie, .content .info span.recent, .content .info span.voormalig, .content .info span.schoolwerk {
+  color: transparent;
+  -webkit-transition: color 0.7s;
+  /* For Safari 3.1 to 6.0 */
+  transition: color 0.7s; }
+
 .content .info span:hover {
   color: #3c3d3c; }
+
+.content .info span.passie:hover {
+  color: #ae2924; }
+
+.content .info span.recent:hover {
+  color: #3c3d3c; }
+
+.content .info span.schoolwerk:hover {
+  color: #fcfbee; }
+
+.content .info span.voormalig:hover {
+  color: #646565; }
 
 .content .video iframe {
   position: absolute;
@@ -135,6 +152,17 @@ nav {
   height: 450px; }
   .content .double.text h2 {
     margin-top: 0; }
+  .content .double.text ul {
+    margin-bottom: 25px;
+    max-width: 400px; }
+  .content .double.text .veld {
+    width: 150px;
+    float: left; }
+  .content .double.text .gegevens {
+    float: left;
+    width: 150px; }
+  .content .double.text .right {
+    float: right; }
 
 .content .item-01 {
   background: url("../img/port/cambiance.png") no-repeat; }
@@ -195,6 +223,15 @@ nav {
 
 .content .item-20 {
   background: url("../img/port/oculus.jpg") no-repeat; }
+
+.content .item-21 {
+  background: url("../img/develop-skills.png") no-repeat; }
+
+.content .item-22 {
+  background: url("../img/design-skills.png") no-repeat; }
+
+.content .item-23 {
+  background: url("../img/robbert-de-man.jpg") no-repeat; }
 
 .content .item-01-res {
   background: url("../img/res/responsive-cambiance.png") no-repeat; }
@@ -305,6 +342,10 @@ nav {
     background-image: url("../img/port/game-programming-ret.png"); }
   .item.item-19 {
     background-image: url("../img/port/gamejam-ret.png"); }
+  .item.item-21 {
+    background-image: url("../img/develop-skills-ret.png"); }
+  .item.item-22 {
+    background-image: url("../img/design-skills-ret.png"); }
   .content .item-01-res {
     background-image: url("../img/res/responsive-cambiance-ret.png"); }
   .content .item-02-res {
@@ -345,6 +386,7 @@ nav {
   h1 {
     width: 200px;
     height: 91px;
+    margin-left: 10px;
     background-size: 200px 91px; }
   nav ul {
     font-size: 15px; }
@@ -360,7 +402,12 @@ nav {
     max-height: 270px;
     background-size: contain; }
   .content .double.text {
-    font-size: 11px; } }
+    font-size: 11px;
+    padding: 10px; }
+    .content .double.text ul {
+      margin-bottom: 15px; }
+      .content .double.text ul li {
+        margin-bottom: 3px; } }
 
 @media only screen and (max-width: 767px) {
   #root {
@@ -424,7 +471,13 @@ nav {
   .content .info span {
     font-size: 30px; }
   .content .item.single {
-    width: 100%; } }
+    width: 100%; }
+  .content .double.text .veld, .content .double.text .gegevens {
+    float: none;
+    width: 100%;
+    text-align: center; }
+  .content .double.text .gegevens {
+    margin-bottom: 10px; } }
 
 @media only screen and (max-width: 359px) {
   nav ul .menu-text {
